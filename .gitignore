@@ -147,6 +147,10 @@ atlassian-ide-plugin.xml
 # Keystore
 keystore.jks
 keystore.properties
+.jks
+
+# dependency graph generator
+dig/
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
@@ -159,6 +163,3 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.gitignore.io/api/androidstudio
-dig/
-hajiloo_keystore.jks
-hajiloo_keystore.properties

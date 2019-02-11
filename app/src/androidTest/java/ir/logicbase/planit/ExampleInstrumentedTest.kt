@@ -1,4 +1,4 @@
-package ir.logicbase.gotodo
+package ir.logicbase.planit
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

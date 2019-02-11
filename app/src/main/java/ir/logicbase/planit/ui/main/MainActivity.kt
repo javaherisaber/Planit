@@ -1,18 +1,21 @@
-package ir.logicbase.gotodo
+package ir.logicbase.planit.ui.main
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import co.ronash.pushe.Pushe
 import com.google.android.material.snackbar.Snackbar
+import ir.logicbase.planit.R
+import ir.logicfan.core.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        Pushe.initialize(this, true)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

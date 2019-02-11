@@ -1,15 +1,16 @@
-package ir.logicbase.gotodo
+package ir.logicbase.planit.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import ir.logicbase.planit.R
+import ir.logicfan.core.ui.base.BaseFragment
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class MainActivityFragment : Fragment() {
+class MainFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -1,4 +1,4 @@
-package ir.logicbase.gotodo
+package ir.logicbase.planit
 
 import org.junit.Test
 
