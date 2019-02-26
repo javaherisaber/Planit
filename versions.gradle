@@ -26,6 +26,8 @@ ext {
             rxAndroid               : '2.1.0',
             circleImageView         : '2.2.0',
             picasso                 : '2.5.2',
+            firebaseCore            : '16.0.6',
+            googleServices          : '4.0.1',
             googleGcm               : '16.0.0',
             googleLocation          : '16.0.0',
             googleAds               : '17.1.2',

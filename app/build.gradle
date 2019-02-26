@@ -107,6 +107,9 @@ dependencies {
     implementation "com.google.android.gms:play-services-ads:${versions.googleAds}"
     implementation "com.google.maps.android:android-maps-utils:${versions.mapsUtils}"
 
+    // firebase
+    implementation "com.google.firebase:firebase-core:${versions.firebaseCore}"
+
     // butter-knife
     implementation "com.jakewharton:butterknife:${versions.butterknife}"
     kapt "com.jakewharton:butterknife-compiler:${versions.butterknife}"
@@ -135,3 +138,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
 }
+
+apply plugin: 'com.google.gms.google-services'

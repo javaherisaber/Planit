@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "578820048814",
+    "firebase_url": "https://planit-23961.firebaseio.com",
+    "project_id": "planit-23961",
+    "storage_bucket": "planit-23961.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578820048814:android:017d312b686b7bea",
+        "android_client_info": {
+          "package_name": "ir.logicbase.planit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578820048814-orpku0vc7grmfbv1qjsklp6hob4kr4au.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoQgx6h60iGXSFHxOcefLrmfGOxUxwBPE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
