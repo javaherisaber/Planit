@@ -15,7 +15,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(bottom_app_bar)
         Pushe.initialize(this, true)
 
         fab.setOnClickListener { view ->
@@ -26,7 +26,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.activity_main_menu, menu)
         return true
     }
 
