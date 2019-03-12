@@ -7,6 +7,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.dokka-android'
 apply plugin: 'io.fabric'
 
 repositories {
@@ -66,6 +67,12 @@ android {
             // Default is 100.
             option("-Xmaxerrs", 500)
         }
+    }
+    dokka {
+        outputFormat = 'html'
+        outputDirectory = "$buildDir/javadoc"
+        skipDeprecated = true // Do not output deprecated members
+        reportUndocumented = true // Emit warnings about not documented members.
     }
 }
 
