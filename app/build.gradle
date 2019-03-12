@@ -74,6 +74,9 @@ android {
         skipDeprecated = true // Do not output deprecated members
         reportUndocumented = true // Emit warnings about not documented members.
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {

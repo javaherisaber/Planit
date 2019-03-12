@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import co.ronash.pushe.Pushe
 import ir.logicbase.planit.R
+import ir.logicbase.planit.ui.main.bottomdrawer.MainBottomDrawerFragment
 import ir.logicfan.core.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast

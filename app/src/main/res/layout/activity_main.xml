@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.main.MainActivity">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
 
     <fragment
         android:id="@+id/fragment_activityMain"
-        android:name="ir.logicbase.planit.ui.main.MainFragment"
+        android:name="ir.logicbase.planit.ui.todo.TodoFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_todo" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar_activityMain"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:backgroundTint="@color/colorPrimary"
-            app:fabAlignmentMode="center"
-            app:fabCradleMargin="8dp"
-            app:fabCradleVerticalOffset="8dp"
-            app:navigationIcon="@drawable/activity_main_menu_white_24dp"/>
+        android:id="@+id/bottomAppBar_activityMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="8dp"
+        app:fabCradleVerticalOffset="8dp"
+        app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:navigationIcon="@drawable/activity_main_menu_white_24dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_activityMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottomAppBar_activityMain"
-            app:srcCompat="@drawable/all_add_white_24dp"/>
+        android:id="@+id/fab_activityMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottomAppBar_activityMain"
+        app:srcCompat="@drawable/all_add_white_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
