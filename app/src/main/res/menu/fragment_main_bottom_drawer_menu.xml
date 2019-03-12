@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ir.logicbase.planit.ui.main.MainActivity">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_fragmentMain_bottomDrawer_today"
+            android:checked="true"
+            android:enabled="true"
+            android:icon="@drawable/fragment_main_bottom_drawer_menu_today"
+            android:title="@string/fragment_main_bottom_drawer_today" />
+        <item
+            android:id="@+id/navigation_fragmentMain_bottomDrawer_inbox"
+            android:icon="@drawable/fragment_main_bottom_drawer_menu_inbox"
+            android:title="@string/fragment_main_bottom_drawer_inbox" />
+        <item
+            android:id="@+id/navigation_fragmentMain_bottomDrawer_upcoming"
+            android:icon="@drawable/fragment_main_bottom_drawer_menu_upcoming"
+            android:title="@string/fragment_main_bottom_drawer_upcoming" />
+    </group>
+</menu>

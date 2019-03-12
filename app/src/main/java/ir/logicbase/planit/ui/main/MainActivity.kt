@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import co.ronash.pushe.Pushe
-import com.google.android.material.snackbar.Snackbar
 import ir.logicbase.planit.R
 import ir.logicfan.core.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.toast
 
 class MainActivity : BaseActivity() {
 
@@ -15,12 +15,11 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(bottom_app_bar)
         Pushe.initialize(this, true)
+        setSupportActionBar(bottomAppBar_activityMain)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        fab_activityMain.setOnClickListener {
+            toast("clicked on fab")
         }
     }
 
@@ -35,7 +34,19 @@ class MainActivity : BaseActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            android.R.id.home -> {
+                val bottomDrawerFragment = MainBottomDrawerFragment()
+                bottomDrawerFragment.show(supportFragmentManager, bottomDrawerFragment.tag)
+                true
+            }
+            R.id.menu_activityMain_settings -> {
+                toast("clicked on settings")
+                true
+            }
+            R.id.menu_activityMain_search -> {
+                toast("clicked on Search")
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

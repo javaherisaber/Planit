@@ -3,14 +3,12 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="ir.logicbase.planit.ui.main.MainActivity">
 
-    <item android:id="@+id/menu_activity_main_search"
-        android:title="Search"
-        android:orderInCategory="1"
+    <item android:id="@+id/menu_activityMain_search"
+        android:title="@string/all_search"
         android:icon="@drawable/all_search_white_24dp"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
+    <item android:id="@+id/menu_activityMain_settings"
+          android:title="@string/all_settings"
           app:showAsAction="never"/>
 </menu>

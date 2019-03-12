@@ -7,10 +7,16 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.MainActivity">
 
-    <include layout="@layout/content_main"/>
+    <fragment
+        android:id="@+id/fragment_activityMain"
+        android:name="ir.logicbase.planit.ui.main.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout="@layout/fragment_main"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottom_app_bar"
+            android:id="@+id/bottomAppBar_activityMain"
             android:theme="@style/AppTheme.AppBarOverlay"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             android:layout_width="match_parent"
@@ -23,10 +29,10 @@
             app:navigationIcon="@drawable/activity_main_menu_white_24dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/fab_activityMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottom_app_bar"
+            app:layout_anchor="@id/bottomAppBar_activityMain"
             app:srcCompat="@drawable/all_add_white_24dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
