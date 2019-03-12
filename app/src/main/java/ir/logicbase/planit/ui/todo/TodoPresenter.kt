@@ -2,8 +2,10 @@ package ir.logicbase.planit.ui.todo
 
 import ir.logicbase.planit.ui.model.Time
 import ir.logicbase.planit.ui.model.Todo
+import ir.logicfan.core.di.scope.PerFragment
 import javax.inject.Inject
 
+@PerFragment
 class TodoPresenter @Inject
 constructor(private val view: TodoContract.View) : TodoContract.Action, TodoContract.AdapterAction {
 
