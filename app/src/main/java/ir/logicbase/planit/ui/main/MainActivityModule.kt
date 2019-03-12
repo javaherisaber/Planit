@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
+import ir.logicbase.planit.ui.main.bottomdrawer.MainBottomDrawerFragment
+import ir.logicbase.planit.ui.main.bottomdrawer.MainBottomDrawerModule
+import ir.logicbase.planit.ui.todo.TodoFragment
+import ir.logicbase.planit.ui.todo.TodoFragmentModule
 import ir.logicfan.core.di.scope.PerActivity
 import ir.logicfan.core.di.scope.PerFragment
 import ir.logicfan.core.ui.base.BaseActivityModule
@@ -21,6 +25,10 @@ abstract class MainActivityModule {
     abstract fun appCompatActivity(mainActivity: MainActivity): AppCompatActivity
 
     @PerFragment
-    @ContributesAndroidInjector(modules = [MainFragmentModule::class])
-    abstract fun mainFragment(): MainFragment
+    @ContributesAndroidInjector(modules = [TodoFragmentModule::class])
+    abstract fun todoFragment(): TodoFragment
+
+    @PerFragment
+    @ContributesAndroidInjector(modules = [MainBottomDrawerModule::class])
+    abstract fun mainBottomDrawerFragment(): MainBottomDrawerFragment
 }
