@@ -1,7 +1,6 @@
 package ir.logicbase.planit.ui.todo
 
-import ir.logicbase.planit.ui.model.Time
-import ir.logicbase.planit.ui.model.Todo
+import ir.logicbase.planit.data.db.entity.Todo
 import ir.logicfan.core.di.scope.PerFragment
 import javax.inject.Inject
 
@@ -12,28 +11,16 @@ constructor(private val view: TodoContract.View) : TodoContract.Action, TodoCont
     private var todoList: List<Todo> = listOf()
 
     override fun onStart() {
-        todoList = listOf(
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30)),
-            Todo(false, "طراحی رابط کاربری پلنیت", Time(16, 30))
-        )
         view.initializeAdapter()
     }
 
     override fun onStop() {
 
+    }
+
+    override fun addTodos(todoList: List<Todo>) {
+        this.todoList = todoList
+        view.displayNewItemsInAdapter()
     }
 
     override fun getTodo(position: Int): Todo = todoList[position]

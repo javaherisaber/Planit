@@ -20,4 +20,8 @@ constructor(private val presenter: TodoContract.AdapterAction) : RecyclerView.Ad
         holder.bind(presenter.getTodo(position), position)
     }
 
+    fun displayNewItems() {
+        notifyDataSetChanged()
+    }
+
 }

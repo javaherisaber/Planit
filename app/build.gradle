@@ -95,6 +95,19 @@ dependencies {
     implementation "androidx.browser:browser:$versions.browser"
     implementation "androidx.multidex:multidex:$versions.multidex"
 
+    // Room
+    implementation "android.arch.persistence.room:runtime:$versions.room"
+    kapt "android.arch.persistence.room:compiler:$versions.room"
+    androidTestImplementation "android.arch.persistence.room:testing:$versions.room"
+
+    // Lifecycle
+    implementation "android.arch.lifecycle:extensions:$versions.archLifecycle"
+    kapt "android.arch.lifecycle:compiler:$versions.archLifecycle"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+
     // dagger
     implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
