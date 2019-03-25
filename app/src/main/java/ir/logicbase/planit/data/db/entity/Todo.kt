@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 data class Todo(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(index = true, name = BaseColumns._ID)
-    var id: Long? = null,
+    var id: Long? = null, // todo: change to immutable variable after refactor
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "time")

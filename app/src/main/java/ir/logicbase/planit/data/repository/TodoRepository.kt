@@ -4,8 +4,10 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import ir.logicbase.planit.data.db.dao.TodoDao
 import ir.logicbase.planit.data.db.entity.Todo
+import javax.inject.Inject
 
-class TodoRepository(private val todoDao: TodoDao) {
+class TodoRepository @Inject constructor(private val todoDao: TodoDao) {
+
     val allTodos: LiveData<List<Todo>> = todoDao.getAllTodos()
 
     @WorkerThread

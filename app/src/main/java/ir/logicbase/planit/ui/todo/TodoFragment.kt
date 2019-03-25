@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.logicbase.planit.R
 import ir.logicfan.core.data.network.error.NetworkErrorType
@@ -22,13 +21,13 @@ class TodoFragment : BaseFragment(), TodoContract.View {
     lateinit var presenter: TodoContract.Action
     @Inject
     lateinit var adapter: TodoAdapter
-    private lateinit var todoViewModel: TodoViewModel
+    @Inject
+    lateinit var todoViewModel: TodoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        todoViewModel = ViewModelProviders.of(this).get(TodoViewModel::class.java)
         return inflater.inflate(R.layout.fragment_todo, container, false)
     }
 

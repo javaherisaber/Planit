@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-          package="ir.logicbase.planit">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ir.logicbase.planit">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Required by pushe -->
-    <uses-sdk tools:overrideLibrary="co.ronash.pushe"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE"/>
+    <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+
     <permission
-            android:name="${applicationId}.permission.C2D_MESSAGE"
-            android:protectionLevel="signature"/>
+        android:name="${applicationId}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
     <!-- End of Required by pushe -->
 
     <application
-            android:name=".ui.base.BaseApplication"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:usesCleartextTraffic="true"
-            tools:ignore="AllowBackup,GoogleAppIndexingWarning"
-            tools:targetApi="m"
-            android:theme="@style/AppTheme">
+        android:name=".ui.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:targetApi="m">
         <!-- Meta -->
         <meta-data
-                android:name="co.ronash.pushe.token"
-                android:value="PUSHE_974974494791"/>
+            android:name="co.ronash.pushe.token"
+            android:value="PUSHE_974974494791" />
         <meta-data
-                android:name="co.ronash.pushe.cr"
-                android:value="Tm9uZQ=="/>
+            android:name="co.ronash.pushe.cr"
+            android:value="Tm9uZQ==" />
         <meta-data
-                android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-                android:value="true"/>
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
         <meta-data
-                android:name="io.fabric.ApiKey"
-                android:value="621ce0d4431f655a756ffff7842b08497289af54"/>
+            android:name="io.fabric.ApiKey"
+            android:value="621ce0d4431f655a756ffff7842b08497289af54" />
         <!-- End of Meta -->
 
         <!-- Activity -->
         <activity
-                android:name=".ui.main.MainActivity"
-                android:label="@string/app_name"
-                android:theme="@style/SplashScreenTheme">
+            android:name=".ui.main.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <!-- End of Activity -->
@@ -57,22 +60,22 @@
         <!-- Receiver -->
         <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
 
                 <data
-                        android:path="${applicationId}"
-                        android:scheme="package"/>
+                    android:path="${applicationId}"
+                    android:scheme="package" />
             </intent-filter>
         </receiver>
         <receiver
-                android:name="com.google.android.gms.gcm.GcmReceiver"
-                android:exported="true"
-                android:permission="com.google.android.c2dm.permission.SEND">
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <category android:name="${applicationId}"/>
+                <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
         <!-- End of Receiver -->

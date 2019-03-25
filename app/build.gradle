@@ -67,6 +67,9 @@ android {
             // Default is 100.
             option("-Xmaxerrs", 500)
         }
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas".toString())
+        }
     }
     dokka {
         outputFormat = 'html'
@@ -107,6 +110,10 @@ dependencies {
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+
+    // Android KTX
+    implementation "androidx.core:core-ktx:$versions.ktxCore"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.ktxLifecycleViewModel"
 
     // dagger
     implementation "com.google.dagger:dagger:$versions.dagger"
@@ -166,8 +173,8 @@ dependencies {
     }
 
     // config
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 apply plugin: 'com.google.gms.google-services'
