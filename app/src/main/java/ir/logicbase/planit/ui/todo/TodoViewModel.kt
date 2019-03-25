@@ -12,6 +12,7 @@ import javax.inject.Inject
 class TodoViewModel @Inject constructor(private val todoRepository: TodoRepository) : ViewModel() {
 
     val allTodos: LiveData<List<Todo>> = todoRepository.allTodos
+    val title = "today"
 
     fun insert(todo: Todo) = viewModelScope.launch(Dispatchers.IO) {
         todoRepository.insert(todo)

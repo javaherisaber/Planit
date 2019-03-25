@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.logicbase.planit.R
+import ir.logicbase.planit.databinding.FragmentTodoBinding
 import ir.logicfan.core.data.network.error.NetworkErrorType
 import ir.logicfan.core.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_todo.*
@@ -24,11 +26,12 @@ class TodoFragment : BaseFragment(), TodoContract.View {
     @Inject
     lateinit var todoViewModel: TodoViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_todo, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return DataBindingUtil.inflate<FragmentTodoBinding>(inflater, R.layout.fragment_todo, container, false)
+            .apply {
+                setLifecycleOwner(this@TodoFragment) // when we use LiveData in data binding, this expression is required
+                viewModel = todoViewModel
+            }.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,7 +43,7 @@ class TodoFragment : BaseFragment(), TodoContract.View {
     }
 
     override fun displayNewItemsInAdapter() {
-        adapter.displayNewItems()
+        adapter.refreshDataSet()
     }
 
     override fun initializeAdapter() {
