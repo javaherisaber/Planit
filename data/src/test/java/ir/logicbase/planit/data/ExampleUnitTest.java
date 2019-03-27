@@ -1,4 +1,4 @@
-package ir.logicfan.core.data;
+package ir.logicbase.planit.data;
 
 import org.junit.Test;
 

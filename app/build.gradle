@@ -183,6 +183,8 @@ dependencies {
     // config
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':data')
+    implementation project(':domain')
 }
 
 apply plugin: 'com.google.gms.google-services'
