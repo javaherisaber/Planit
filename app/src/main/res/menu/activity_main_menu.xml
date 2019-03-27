@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
-      tools:context="ir.logicbase.planit.ui.main.MainActivity">
+      tools:context=".app.ui.main.MainActivity">
 
     <item android:id="@+id/menu_activityMain_search"
         android:title="@string/all_search"

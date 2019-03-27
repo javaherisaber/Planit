@@ -28,7 +28,7 @@ buildscript {
 android {
     compileSdkVersion config.compileSdk
     defaultConfig {
-        applicationId "ir.logicbase.planit"
+        applicationId "ir.logicbase.planit.app"
         minSdkVersion config.minSdk
         targetSdkVersion config.targetSdk
         multiDexEnabled true
@@ -83,9 +83,14 @@ android {
     androidExtensions {
         experimental = true
     }
+    packagingOptions {
+        exclude 'META-INF/core_release.kotlin_module'
+        exclude 'META-INF/library_release.kotlin_module'
+    }
 }
 
 dependencies {
+
     // logicfan
     implementation "com.github.logicfanlab:AndroidProjectCore:$versions.logicfanCore"
 
@@ -169,7 +174,7 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:$versions.anko"
     implementation "de.hdodenhof:circleimageview:$versions.circleImageView"
     implementation "com.squareup.picasso:picasso:$versions.picasso"
-    implementation "co.ronash.android:pushe-base:$versions.pushe"
+    implementation "co.ronash.pushe:base:$versions.pushe"
     implementation "com.github.roojin:persian-calendar-view:$versions.persianCalendar"
     implementation("com.crashlytics.sdk.android:crashlytics:$versions.fabric@aar") {
         transitive = true
@@ -177,7 +182,7 @@ dependencies {
 
     // config
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 apply plugin: 'com.google.gms.google-services'

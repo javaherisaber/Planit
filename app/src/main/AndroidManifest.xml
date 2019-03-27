@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ir.logicbase.planit">
+    package="ir.logicbase.planit.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- Required by pushe -->
-    <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
-
-    <permission
-        android:name="${applicationId}.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-    <!-- End of Required by pushe -->
-
     <application
-        android:name=".ui.base.BaseApplication"
+        android:name="ir.logicbase.planit.app.ui.base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,11 +18,8 @@
         tools:targetApi="m">
         <!-- Meta -->
         <meta-data
-            android:name="co.ronash.pushe.token"
-            android:value="PUSHE_974974494791" />
-        <meta-data
-            android:name="co.ronash.pushe.cr"
-            android:value="Tm9uZQ==" />
+            android:name="pushe_token"
+            android:value="ir.logicbase.planit.app@974974494791" />
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
@@ -46,7 +30,7 @@
 
         <!-- Activity -->
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name="ir.logicbase.planit.app.ui.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
@@ -58,26 +42,7 @@
         <!-- End of Activity -->
 
         <!-- Receiver -->
-        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REPLACED" />
 
-                <data
-                    android:path="${applicationId}"
-                    android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-
-                <category android:name="${applicationId}" />
-            </intent-filter>
-        </receiver>
         <!-- End of Receiver -->
     </application>
 

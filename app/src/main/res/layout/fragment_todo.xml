@@ -2,14 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.todo.TodoFragment"
+    tools:context=".app.ui.todo.TodoFragment"
     tools:showIn="@layout/activity_main">
 
     <data>
 
         <variable
             name="viewModel"
-            type="ir.logicbase.planit.ui.todo.TodoViewModel" />
+            type="ir.logicbase.planit.app.ui.todo.TodoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

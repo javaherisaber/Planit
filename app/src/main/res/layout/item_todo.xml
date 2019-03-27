@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="ir.logicbase.planit.data.db.entity.Todo" />
+            type="ir.logicbase.planit.app.data.db.entity.Todo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
