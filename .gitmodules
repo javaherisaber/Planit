@@ -1,0 +1,3 @@
+[submodule "androidprojectcore"]
+	path = androidprojectcore
+	url = https://javaherisaber@bitbucket.org/logicfanlab/androidprojectcore.git

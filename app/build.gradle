@@ -8,22 +8,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.jetbrains.dokka-android'
-apply plugin: 'io.fabric'
-
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-    mavenCentral()
-}
-
-buildscript {
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
-
-    dependencies {
-        classpath "io.fabric.tools:gradle:${versions.fabricGradle}"
-    }
-}
 
 android {
     compileSdkVersion config.compileSdk
@@ -49,10 +33,6 @@ android {
         }
     }
     buildTypes {
-        debug {
-            // Disable fabric build ID generation for debug builds
-            ext.enableCrashlytics = false
-        }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -70,9 +50,6 @@ android {
             // Default is 100.
             option("-Xmaxerrs", 500)
         }
-        arguments {
-            arg("room.schemaLocation", "$projectDir/schemas".toString())
-        }
     }
     dokka {
         outputFormat = 'html'
@@ -86,14 +63,14 @@ android {
     packagingOptions {
         exclude 'META-INF/core_release.kotlin_module'
         exclude 'META-INF/library_release.kotlin_module'
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
 dependencies {
-
-    // logicfan
-    implementation "com.github.logicfanlab:AndroidProjectCore:$versions.logicfanCore"
-
     // androidx
     implementation "androidx.appcompat:appcompat:$versions.appCompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
@@ -101,64 +78,24 @@ dependencies {
     implementation "androidx.vectordrawable:vectordrawable:$versions.vectorDrawable"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
     implementation "androidx.cardview:cardview:$versions.cardView"
-    implementation "androidx.legacy:legacy-support-v4:$versions.legacySupport"
-    implementation "androidx.preference:preference:$versions.preference"
-    implementation "androidx.browser:browser:$versions.browser"
+    implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "androidx.multidex:multidex:$versions.multidex"
 
     // Room
-    implementation "android.arch.persistence.room:runtime:$versions.room"
-    kapt "android.arch.persistence.room:compiler:$versions.room"
-    androidTestImplementation "android.arch.persistence.room:testing:$versions.room"
-
-    // Lifecycle
-    implementation "android.arch.lifecycle:extensions:$versions.archLifecycle"
-    kapt "android.arch.lifecycle:compiler:$versions.archLifecycle"
+    implementation "androidx.room:room-runtime:$versions.room"
+    kapt "androidx.room:room-compiler:$versions.room"
+    implementation "androidx.room:room-rxjava2:$versions.room"
+    implementation "androidx.room:room-ktx:$versions.room" // Coroutines support
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
-
-    // Android KTX
-    implementation "androidx.core:core-ktx:$versions.ktxCore"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.ktxLifecycleViewModel"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:$versions.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:$versions.coroutines"
 
     // dagger
-    implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
-    implementation "com.google.dagger:dagger-android:$versions.dagger"
-    implementation "com.google.dagger:dagger-android-support:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
-
-    // retrofit
-    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
-    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
-    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.rxRetrofit"
-
-    // rx-reactive
-    implementation "io.reactivex.rxjava2:rxjava:$versions.rxJava"
-    implementation "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"
-    implementation "com.github.tbruyelle:rxpermissions:$versions.rxPermission"
-
-    // ok-http
-    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
-    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttpLoggingInterceptor"
-
-    // google
-    implementation "com.google.android.material:material:$versions.material"
-    implementation "com.google.code.gson:gson:$versions.gson"
-    implementation "com.google.android.gms:play-services-maps:$versions.googleMaps"
-    implementation "com.google.android.gms:play-services-gcm:$versions.googleGcm"
-    implementation "com.google.android.gms:play-services-location:$versions.googleLocation"
-    implementation "com.google.android.gms:play-services-ads:$versions.googleAds"
-    implementation "com.google.maps.android:android-maps-utils:$versions.mapsUtils"
-
-    // firebase
-    implementation "com.google.firebase:firebase-core:$versions.firebaseCore"
-
-    // butter-knife
-    implementation "com.jakewharton:butterknife:$versions.butterknife"
-    kapt "com.jakewharton:butterknife-compiler:$versions.butterknife"
 
     // test
     testImplementation "junit:junit:$versions.junit"
@@ -174,17 +111,11 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:$versions.anko"
     implementation "de.hdodenhof:circleimageview:$versions.circleImageView"
     implementation "com.squareup.picasso:picasso:$versions.picasso"
-    implementation "co.ronash.pushe:base:$versions.pushe"
     implementation "com.github.roojin:persian-calendar-view:$versions.persianCalendar"
-    implementation("com.crashlytics.sdk.android:crashlytics:$versions.fabric@aar") {
-        transitive = true
-    }
 
     // config
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':data')
-    implementation project(':domain')
 }
 
 apply plugin: 'com.google.gms.google-services'

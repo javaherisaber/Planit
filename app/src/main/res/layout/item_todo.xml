@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="ir.logicbase.planit.app.data.db.entity.Todo" />
+            type="ir.logicbase.planit.data.entity.TodoData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,14 +28,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@{item.title}"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textAppearance="@style/TextAppearance.App.Body1"
+            android:text="@{item.title}"
+            android:textAppearance="@style/Core.TextAppearance.Body1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/checkbox_itemTodo_tick"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="طراحی رابط کاربری پلنیت"/>
+            tools:text="Do the dishes" />
 
         <TextView
             android:id="@+id/textView_itemTodo_time"
@@ -43,11 +43,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="@{item.time}"
-            android:textAppearance="@style/TextAppearance.App.Body2"
+            android:textAppearance="@style/Core.TextAppearance.Body2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="16:30"/>
+            tools:text="16:30" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
