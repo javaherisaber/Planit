@@ -2,12 +2,13 @@
     <string name="app_name">Planit</string>
 
     <!-- fragment -->
-    <string name="fragment_main_bottom_drawer_today">امروز</string>
-    <string name="fragment_main_bottom_drawer_inbox">برنامه ریزی نشده</string>
-    <string name="fragment_main_bottom_drawer_upcoming">هفته پیش رو</string>
+    <string name="fragment_main_bottom_drawer_today">Today</string>
+    <string name="fragment_main_bottom_drawer_inbox">Inbox</string>
+    <string name="fragment_main_bottom_drawer_upcoming">Upcoming</string>
     <!-- end of fragment -->
 
     <!-- all -->
-    <string name="all_search">جستجو</string>
+    <string name="all_search">Search</string>
+    <string name="all_settings">Settings</string>
     <!-- end of all -->
 </resources>

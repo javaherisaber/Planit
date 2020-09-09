@@ -1,0 +1,14 @@
+Features to use:
+- Kotlin kts build script
+- Jetpack compose
+- Flutter module
+- Android TV module
+- Coroutines
+- Paging 3 with Database cache
+- TDD
+- Hilt
+- MotionLayout
+- Flow
+- Flex
+- SharedElementTransition
+-

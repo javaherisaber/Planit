@@ -11,8 +11,19 @@
     <color name="colorOnSecondary">#000000</color>
     <color name="colorBackground">#ffffff</color>
     <color name="colorError">#d46109</color>
+
+    <!-- general -->
+    <color name="colorWhite">@color/core_colorWhite</color>
+    <color name="colorWhiteAlpha">#99FFFFFF</color>
+    <color name="colorBlack">@color/core_colorBlack</color>
+    <color name="colorBlackHint">#B3000000</color>
+    <color name="colorBlackLight">#99000000</color>
+    <color name="colorRedDark">@color/core_colorRedDark</color>
     <color name="colorLightGrey">#dcdcdc</color>
     <color name="colorDarkGrey">#7e7e7e</color>
+
+    <!-- typography -->
     <color name="colorBody1">#575b63</color>
     <color name="colorBody2">#78849e</color>
+
 </resources>
